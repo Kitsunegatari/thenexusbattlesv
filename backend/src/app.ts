@@ -8,6 +8,8 @@ import morgan from 'morgan';
 
 const app = express();
 
+app.use(morgan('dev'));
+
 app.use(express.json());
 
 app.use('/api/products', productRoutes);
@@ -19,7 +21,5 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/auth', authRoutes);
 
 app.use(errorHandler);
-
-app.use(morgan('dev'));
 
 export default app;

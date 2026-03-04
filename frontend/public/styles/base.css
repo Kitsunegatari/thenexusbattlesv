@@ -1,0 +1,34 @@
+:root {
+
+    /* Colores */
+    --primary: #2563eb;
+    --primary-hover: #1e40af;
+    --dark: #111827;
+    --gray-100: #f3f4f6;
+    --gray-300: #d1d5db;
+    --gray-600: #4b5563;
+    --white: #ffffff;
+    --danger: #ef4444;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+    --shadow-md: 0 8px 20px rgba(0,0,0,0.08);
+
+    /* Bordes */
+    --radius: 14px;
+
+    /* Transiciones */
+    --transition: all 0.25s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--gray-100);
+    color: var(--dark);
+}

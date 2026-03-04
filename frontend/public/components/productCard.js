@@ -1,29 +1,23 @@
 export function ProductCard(product) {
-    return `
-        <div class="product-card ${product.isOwned ? 'owned' : ''}">
-        
-        ${product.is_promo ? 
-            `<div class="promo-badge">-${product.discount_percentage}%</div>` 
-            : ''}
 
+    const card = document.createElement("div");
+    card.className = "product-card";
+
+    card.innerHTML = `
         <img src="${product.image_url}" />
-
         <h3>${product.name}</h3>
         <p>${product.description}</p>
-
-        <div class="price">
-            ${product.currency} ${product.price}
-        </div>
+        <span class="price">$${product.price}</span>
 
         <div class="actions">
-            <button onclick="addToCart(${product.id})">
-            🛒 Añadir
-            </button>
-
-            <button onclick="toggleWishlist(${product.id})">
-            ❤️
-            </button>
-        </div>
+            <button class="add-cart">🛒</button>
+            <button class="wishlist">❤</button>
         </div>
     `;
+
+    card.querySelector(".add-cart").addEventListener("click", () => {
+        addToCart(product.id);
+    });
+
+    return card;
 }
